@@ -1,33 +1,65 @@
-.App {
-  text-align: center;
+.app-container {
+  min-height: 100vh;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 35px;
+  margin: 25px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+/* header */
+.app-container > div:first-child {
+  font-size: calc(25px + 2vmin);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* async link container */
+.app-container > div:nth-child(2) > div:first-child {
+  display: flex;
+  flex-direction: row;
+}
+
+/* async link */
+.app-container > div:nth-child(2) > div:first-child > div:first-child {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* todos list */
+.todos-list-container > div {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.todo-container > div > input[type=checkbox] {
+  cursor: pointer;
+}
+
+.todo-container > div > img.busy {
+  height: 2.5vmin;
+}
+
+.busy-container {
+  margin-top: 35px;
+}
+
+.busy-container > .busy {
+  height: 20vmin;
+}
+
+.busy {
+  animation: spin infinite 10s ease-in-out;
   pointer-events: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes spin {
   to {
-    transform: rotate(360deg);
+    transform: rotate(36000deg);
   }
 }
